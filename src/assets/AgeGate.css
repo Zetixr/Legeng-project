@@ -1,0 +1,160 @@
+
+/* Обнуление */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Оверлей фиксирует окно строго по границам экрана */
+.age-gate-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #060a12;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+/* Контейнер растягивается на всю ширину и высоту без рамок */
+.age-gate-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  
+  /* Картинка как фоновый рисунок на весь экран */
+  background-image: url('../imgs/modal.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Контентная область с точными отступами как в макете */
+.age-gate-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  
+  /* Отступы сверху и снизу, чтобы текст идеально встал по центру фрески */
+  padding: 38vh 5% 24vh 5%; 
+}
+
+/* Главный заголовок «ТЕБЕ БОЛЬШЕ 18, ВОИН?!» */
+.age-gate-title {
+  color: #ffffff;
+  font-family: 'DS Greece', sans-serif;
+  font-size: clamp(32px, 4.8vw, 64px); /* Крупный размер текста */
+  font-weight: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Блок для текста по центру */
+.age-gate-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 14px; /* Плотный отступ между параграфами */
+  max-width: 680px; /* Сужаем блок, чтобы текст переносился как на скриншоте */
+  margin: 0 auto;
+}
+
+/* Подзаголовок (ЗАКОНОДАТЕЛЬСТВО РФ...) */
+.age-gate-subtitle {
+  color: #ffffff;
+  font-family: 'DS Greece', sans-serif;
+  font-size: clamp(12px, 1.2vw, 15px);
+  line-height: 1.4; /* Компактная межстрочка */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Маленькое описание (НАЖИМАЯ КНОПКУ...) */
+.age-gate-description {
+  color: #ffffff;
+  font-family: 'DS Greece', sans-serif;
+  font-size: clamp(11px, 1.1vw, 13px);
+  line-height: 1.4;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.9; /* Белый цвет без сильного ухода в серый */
+}
+
+/* Контейнер для кнопок, размещенный точно под текстом */
+.age-gate-buttons {
+  display: flex;
+  justify-content: center;
+  /* Динамический шаг: идеально подстраивается под щит и щиколотку воинов */
+  gap: clamp(120px, 18vw, 220px); 
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Кнопки строго по Figma-макету */
+.btn-greek {
+  background: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 0px; /* Полностью острые углы у рамок кнопок */
+  color: #ffffff;
+  font-family: 'DS Greece', sans-serif;
+  
+  /* Размеры из макета */
+  width: 144px;
+  height: 44px;
+  
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  text-transform: uppercase;
+}
+
+/* Меандр / узор внутри кнопок */
+.greek-pattern {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+/* Сдержанные эффекты при наведении (без лишнего неонового свечения) */
+.btn-yes:hover, .btn-redirect:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.btn-no:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Стили для экрана "НЕТ" */
+.age-gate-denied .age-gate-title {
+  color: #ffffff; /* Сохраняем белый цвет для общей стилистики */
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

@@ -1,0 +1,29 @@
+/* 1. Регистрируем шрифт в системе */
+@font-face {
+  font-family: 'DS Greece';
+  src: url('./fonts/dsgreece.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 2. Обнуление отступов */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 3. Базовый шрифт для ВСЕГО сайта по умолчанию (Raleway или Arial) */
+html, body, #root {
+  font-family: 'Arial', sans-serif; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 4. Включаем греческий шрифт ТОЛЬКО там, где он реально нужен — внутри модалки */
+.age-gate-container h1,
+.age-gate-container p,
+.age-gate-container button,
+.age-gate-container a {
+  font-family: 'DS Greece', sans-serif !important;
+}
