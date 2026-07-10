@@ -1,18 +1,59 @@
+/* Обнуление базовых отступов для чистоты верстки */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .navbar {
-  /* Делаем навбар фиксированным сверху, чтобы под ним прокручивался контент */
-  position: fixed;
-  top: 0;
-  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
-  z-index: 1000;
+  height: 70px; /* Подберите высоту под ваш макет */
+  background-color: #ffffff;
+  padding: 0 40px; /* Отступы по бокам */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Легкая тень снизу */
+  font-family: 'Inter', 'Arial', sans-serif; /* Поменяйте на шрифт вашего проекта */
+}
 
-  /* Полупрозрачный белый фон (важно, чтобы размытие было видно) */
-  background-color: rgba(255, 255, 255, 0.7); 
+/* Стилизация логотипа */
+.logo {
+  height: 50px; /* Высота иконки шлема */
+  object-fit: contain;
+  cursor: pointer;
+}
 
-  /* Главная магия: размытие заднего плана */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* Для поддержки в Safari */
+/* Контейнер для центрального меню */
+.nav-text {
+  display: flex;
+  gap: 25px; /* Расстояние между ссылками */
+}
 
-  /* Необязательно: тонкая плашка снизу для разделения */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+/* Общие стили для всех ссылок в навбаре */
+.navbar a {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+/* Ссылки центрального меню */
+.nav-text a {
+  color: #555555; /* Серый цвет текста как на скриншоте */
+}
+
+.nav-text a:hover {
+  color: #0b2347; /* Темнеет при наведении (под цвет темы) */
+}
+
+/* Номер телефона (прижат к правому краю) */
+.tel-number {
+  color: #333333;
+  font-weight: 600;
+}
+
+.tel-number:hover {
+  opacity: 0.8;
 }
