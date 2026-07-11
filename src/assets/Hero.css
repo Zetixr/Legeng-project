@@ -1,0 +1,180 @@
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 80px); /* Высота экрана без учета навбара */
+  background-color: #ffffff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hero-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 5% 0 8%; 
+  z-index: 10;
+}
+
+/* --- ЛЕВАЯ СТОРОНА: БРЕНДИНГ --- */
+.hero-left-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 450px;
+  flex-shrink: 0;
+}
+
+/* СЛОЕНЫЙ БЛОК ЛОГОТИПА */
+.interactive-logo-block {
+  position: relative;
+  width: 380px; 
+  height: 380px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Вращающаяся внешняя часть (ЭТОТ КРУГ КРУТИТСЯ) */
+.spinning-logo-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: spinCircle 45s linear infinite;
+  z-index: 4;
+}
+
+/* Неподвижный шлем */
+.static-helmet {
+  position: absolute;
+  width: 55%; 
+  height: auto;
+  object-fit: contain;
+  z-index: 5;
+}
+
+/* ТЕКСТ */
+.brand-text-wrapper {
+  color: #060a12;
+}
+
+.sub-title {
+  font-family: 'DS Greece', sans-serif !important;
+  font-size: 24px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.main-title {
+  font-family: 'DS Greece', sans-serif !important;
+  font-size: 90px;
+  font-weight: normal;
+  line-height: 0.9;
+  color: #1D3772; 
+}
+
+.title-footer {
+  font-family: 'DS Greece', sans-serif !important;
+  font-size: 54px;
+  font-weight: normal;
+  line-height: 0.9;
+  letter-spacing: 2px;
+}
+
+/* --- ПРАВАЯ СТОРОНА: БАНКИ --- */
+.hero-right-products {
+  position: absolute; 
+  right: -50px; /* Прижимаем вплотную к правому краю */
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 12;
+}
+
+.products-image {
+  width: clamp(900px, 42vw, 750px); /* Увеличенный размер банок */
+  height: auto;
+  filter: drop-shadow(-10px 15px 30px rgba(0, 0, 0, 0.4)); 
+}
+
+/* --- СИНЯЯ ПОДЛОЖКА СПРАВА --- */
+.hero-blue-side {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 50vw;
+  background-color: #1D3772; 
+  clip-path: polygon(22% 0%, 100% 0%, 100% 100%, 0% 100%);
+  z-index: 2;
+}
+
+/* --- СТАТИЧНЫЙ ФОНОВЫЙ УЗОР (line.png) --- */
+.hero-bg-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(90vw - 40vw); 
+  width: 50vw;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-bg-line img {
+  position: absolute;
+  top: 50%;
+  left: -320px; /* Скорректировано под увеличенную ширину, чтобы сохранить центровку */
+  transform: translateY(-50%) rotate(-16deg); /* ИСПРАВЛЕНО: Убрали анимацию, зафиксировали наклон вдоль скоса */
+  width: clamp(1000px, 85vw, 00px); /* ИСПРАВЛЕНО: Увеличена ширина и масштаб линии */
+  height: clamp(1000px, 85vw, 20000px); /* ИСПРАВЛЕНО: Увеличена высота под пропорции */
+  object-fit: contain;
+  
+  /* Делаем линию светлее синего фона */
+  opacity: 0.15; 
+  mix-blend-mode: screen; 
+}
+
+/* Анимация только для маленького круга */
+@keyframes spinCircle {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* --- АДАПТИВНОСТЬ --- */
+@media (max-width: 992px) {
+  .hero-section {
+    min-height: auto;
+    padding-top: 40px;
+  }
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    padding: 20px 5%;
+  }
+  .hero-right-products {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .products-image {
+    width: 85vw;
+    max-width: 450px;
+  }
+  .hero-blue-side, .hero-bg-line {
+    display: none;
+  }
+}
