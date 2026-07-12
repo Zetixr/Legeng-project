@@ -40,9 +40,9 @@
   top: 0;
   bottom: 0;
   right: 0;
-  width: 100vw; 
+  width: 103vw; 
   background-color: #1D3772; 
-  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(51.5% 0%, 100% 0%, 100% 100%, 0% 100%);
   z-index: 2;
   pointer-events: none;
 }
@@ -64,11 +64,10 @@
 .products-bg-line img {
   position: absolute;
   left: -320px; 
-  transform: rotate(-6.65deg); 
+  transform: rotate(-6.63deg); 
   width: clamp(1000px, 85vw, 1400px);
   height: clamp(1000px, 85vw, 1400px);
   object-fit: contain;
-  opacity: 0.15; 
   mix-blend-mode: screen; 
 }
 

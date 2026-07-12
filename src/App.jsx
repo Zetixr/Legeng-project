@@ -3,6 +3,7 @@ import NavBar from './components/navBar'
 import AgeGate from './components/ageGate'
 import Hero from './pages/hero'
 import ProductsGrid from "./pages/productsGrid"
+import TutorialSection from './pages/tutorial-page'
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <NavBar></NavBar>
       <Hero></Hero>
       <ProductsGrid></ProductsGrid>
+      <TutorialSection></TutorialSection>
     </div>
   )
 }

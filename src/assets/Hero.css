@@ -46,7 +46,7 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  animation: spinCircle 45s linear infinite;
+  animation: spinCircle 10s linear infinite;
   z-index: 4;
 }
 
@@ -139,7 +139,6 @@
   object-fit: contain;
   
   /* Делаем линию светлее синего фона */
-  opacity: 0.15; 
   mix-blend-mode: screen; 
 }
 
