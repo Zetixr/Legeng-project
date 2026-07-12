@@ -1,18 +1,25 @@
 import React from 'react'
 import logo from "../imgs/logo.png"
 import "../assets/navBar.css"
+
 const navBar = () => {
   return (
     <div className='navbar'>
-      <img src={logo} alt="" className='logo' />
+      {/* При клике на логотип скроллит в самый верх к Hero */}
+      <a href="#hero">
+        <img src={logo} alt="Логотип" className='logo' />
+      </a>
+      
       <div className="nav-text">
-        <a href="">О КОМПАНИИ</a>
-        <a href="">АССОРТИМЕНТ</a>
-        <a href="">КАК ИСПОЛЬЗОВАТЬ</a>
-        <a href="">КОНТАКТЫ</a>
-        <a href="">ГДЕ КУПИТЬ</a>
+        {/* Ссылки-якоря для перемещения по одной странице */}
+        <a href="#about">О КОМПАНИИ</a>
+        <a href="#assortment">АССОРТИМЕНТ</a>
+        <a href="#advantages">НАШИ ПРЕИМУЩЕСТВА</a>
+        <a href="#contacts">КОНТАКТЫ</a>
+        <a href="#where-to-buy">ГДЕ КУПИТЬ</a>
       </div>
-      <a href="" className='tel-number'>+7(952)282-28-23</a>
+
+      <a href="tel:+79522823823" className='tel-number'>+7(952)282-38-23</a>
     </div>
   )
 }

@@ -27,3 +27,6 @@ html, body, #root {
 .age-gate-container a {
   font-family: 'DS Greece', sans-serif !important;
 }
+html {
+  scroll-behavior: smooth;
+}

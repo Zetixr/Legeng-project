@@ -1,0 +1,127 @@
+.advantages-section {
+  width: 100%;
+  background-color: #12244B;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.advantages-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.advantages-page-title {
+  font-family: 'DS Greece', sans-serif !important;
+  font-size: 46px;
+  color: #ffffff;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.advantages-flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.advantages-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  min-height: 420px;
+}
+
+.advantages-card-content {
+  padding: 35px 20px 20px 20px;
+  text-align: center;
+}
+
+.advantages-icon-box {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.advantages-img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.advantages-card-title {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.advantages-card-desc {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: sans-serif;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+/* Стили для контейнера греческого узора */
+.advantages-card-bottom-pattern {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  margin-top: auto; /* Прижимает узор строго к самому низу карточки */
+}
+
+.pattern-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Растягивает меандр во всю ширину */
+  
+  /* Делаем узор полупрозрачным, чтобы он стал мягче и слегка перенимал цвет фона */
+  opacity: 0.25; 
+  
+  /* Мягкий переход при наведении (опционально) */
+  transition: opacity 0.3s ease;
+}
+
+/* При наведении на карточку узор можно сделать чуть ярче */
+.advantages-card:hover .pattern-svg {
+  opacity: 0.4;
+}
+
+/* --- АДАПТИВНОСТЬ --- */
+@media (max-width: 992px) {
+  .advantages-flex-container {
+    flex-wrap: wrap;
+  }
+  
+  .advantages-card {
+    flex: 0 0 calc(50% - 10px);
+  }
+
+  .advantages-page-title {
+    font-size: 36px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .advantages-card {
+    flex: 0 0 100%;
+  }
+  
+  .advantages-page-title {
+    font-size: 28px;
+  }
+}
