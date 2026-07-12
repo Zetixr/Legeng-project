@@ -1,0 +1,143 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card-image {
+  width: 100%;
+  height: 240px;
+  background-color: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.product-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card-info {
+  padding: 25px;
+  color: #ffffff; /* Текст внутри цветного блока белый */
+  flex-grow: 1;
+}
+
+.card-title {
+  font-family: 'DS Greece', sans-serif !important;
+  font-size: 28px;
+  margin-bottom: 2px;
+  letter-spacing: 1px;
+}
+
+.card-taste {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.card-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  opacity: 0.9;
+  min-height: 60px; /* Чтобы кнопки были на одном уровне, если текст разной длины */
+}
+
+/* Узор меандра внизу маленькой плитки */
+.card-pattern-bottom {
+  height: 40px;
+  background-color: var(--card-theme-color); /* Берет цвет карточки */
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: center;
+  /* Делает черный узор слегка видимым/прозрачным на цветном фоне */
+  filter: brightness(0) invert(1); 
+  opacity: 0.25;
+}
+/* --- СТИЛИ ДЛЯ УЗОРА В МАЛЕНЬКИХ КАРТОЧКАХ --- */
+
+/* Контейнер карточки (на всякий случай, чтобы узор не вылетал за скругления) */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-card-info {
+  flex-grow: 1; /* Чтобы содержимое растягивалось, прижимая узор к низу */
+}
+
+/* Сам блок узора */
+.product-card-pattern {
+  width: 100%;
+  height: 45px; /* Точная высота плашки под греческий узор */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  margin-top: auto; /* Жестко прижимаем к нижнему краю карточки */
+  background-color: rgba(0, 0, 0, 0.1); /* Легкий контраст */
+}
+
+.product-card-pattern img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Растягивает узор без искажения пропорций */
+  display: block;
+}
+/* --- СТИЛИ ДЛЯ УЗОРА БОЛЬШОЙ КАРТОЧКИ --- */
+.main-card-pattern {
+  width: 100%;
+  height: 45px; 
+  /* Подключаем картинку как фон с повторением по горизонтали */
+  background-image: url('../imgs/under-all-products.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%; /* Высота на максимум, ширина подстроится сама */
+  
+  /* Применяем фильтры и бленд-мод прямо к контейнеру с фоном */
+  filter: brightness(0) invert(1);
+  mix-blend-mode: overlay;
+  opacity: 0.25;
+}
+
+/* Скрываем тег img внутри большой карточки, так как теперь работает фон */
+.main-card-pattern img {
+  display: none;
+}
+
+
+/* --- СТИЛИ ДЛЯ УЗОРА МАЛЕНЬКИХ КАРТОЧЕК --- */
+.product-card-pattern {
+  width: 100%;
+  height: 45px; 
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  margin-top: auto; 
+  background-color: transparent; 
+}
+
+.product-card-pattern img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  
+  /* ЭФФЕКТ С ОРИГИНАЛА: */
+  filter: brightness(0) invert(1); /* Превращает любой исходный цвет линий в белый */
+  mix-blend-mode: overlay;         /* Сливает белый меандр с цветным фоном (зеленым, оранжевым и т.д.) */
+  opacity: 0.25;                   /* Неоновое, мягкое свечение как в Figma */
+}
