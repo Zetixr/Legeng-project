@@ -1,0 +1,155 @@
+.contacts-section {
+  width: 100%;
+  background-color: #12244B;
+  padding: 80px 0 40px 0;
+  overflow: hidden;
+}
+
+.contacts-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contacts-title {
+  font-family: 'DS Greece', sans-serif !important;
+  font-size: 46px;
+  color: #ffffff;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.3fr;
+  gap: 25px;
+  align-items: stretch;
+  margin-bottom: 80px;
+}
+
+/* Форма */
+.contacts-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 2px solid #ffffff;
+  background: transparent;
+  height: 60px;
+}
+
+.input-group input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0 20px;
+  color: #ffffff;
+  font-family: 'DS Greece', sans-serif !important;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'DS Greece', sans-serif !important;
+}
+
+/* Кнопка теперь обычная, на всю ширину инпута */
+.submit-btn {
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+  border: none;
+  color: #12244B;
+  font-family: 'DS Greece', sans-serif !important;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #ff9e00;
+  color: #ffffff;
+}
+
+/* Желтый инфо-блок */
+.contacts-info-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+.info-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hidden-phone-link,
+.hidden-email-link {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  cursor: pointer;
+  z-index: 2;
+}
+.hidden-phone-link { top: 30%; }
+.hidden-email-link { top: 55%; }
+
+/* Карта */
+.contacts-map-box {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  min-height: 300px;
+}
+
+/* Футер */
+.footer-copyright {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 40px;
+}
+
+.footer-copyright p {
+  margin-bottom: 8px;
+}
+
+.footer-sales {
+  margin-top: 25px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+@media (max-width: 992px) {
+  .contacts-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .contacts-title {
+    text-align: center;
+    font-size: 36px;
+  }
+}
